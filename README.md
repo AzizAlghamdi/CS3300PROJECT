@@ -55,4 +55,8 @@ Calendar styling
 Specific styles for the payment page
 Form styling for payment details
 
+
+1. Aziz - patient and doctor log in and registration and home page index & style.css 
+2. Nicholas - schedule. HTML & schedule.CSS & contact.html
+3. Trung - payment.html & payment.CSS & confirmation.css 
 NOTE: this outline is subject to change. 
