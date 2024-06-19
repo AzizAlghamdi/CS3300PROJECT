@@ -59,7 +59,7 @@ Form styling for payment details
 Specific styles for the contact page 
 NOTE: this outline is subject to change. 
 
-
+Work Breakdown:
 1. Aziz - patient and doctor log in and registration and home page index & style.css 
 2. Nicholas - schedule.html & schedule.css & contact.html & contact.css
 3. Trung - payment.html & payment.CSS & confirmation.css 
