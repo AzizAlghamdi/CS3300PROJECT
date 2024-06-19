@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="contact.css"> <!-- Contact page styles -->
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-info">
+            <h2>Our Contact Information</h2>
+            <p>For any inquiries or to get in touch with us, please use the following contact details:</p>
+            <ul>
+                <li><strong>Address:</strong> 1420 Austin Bluffs Pkwy Colorado Springs, CO 80918</li>
+                <li><strong>Phone:</strong> (719)-255-8227</li>
+                <li><strong>Email:</strong> info@clinicname.com</li>
+                <li><strong>Fax:</strong> (719) 255-3650</li>
+            </ul>
+            <div id="map">
+                <!-- Google Map Embed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3115.1230126934375!2d-104.82345631517924!3d38.833957179574654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713490cba5e1c47%3A0x250c5c02f5c2c7f7!2s1420%20Austin%20Bluffs%20Pkwy%2C%20Colorado%20Springs%2C%20CO%2080918%2C%20USA!5e0!3m2!1sen!2sus!4v1625504264301!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section id="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="confirmation.html" method="POST">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Clinic Name</p>
+    </footer>
+</body>
+</html>
