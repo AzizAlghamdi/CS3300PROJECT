@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="schedule.css"> <!-- Schedule page specific styles -->
+</head>
+<body>
+    <header>
+        <h1>Schedule Your Appointment</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="appointment-form">
+            <h2>Appointment Form</h2>
+            <form action="confirmation.html" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Schedule Appointment</button>
+            </form>
+        </section>
+        
+        <section id="calendar-view">
+            <h2>Calendar View</h2>
+            <!-- Here you can add an actual calendar widget or a visual representation of the calendar -->
+            <div id="calendar"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Clinic Name</p>
+    </footer>
+</body>
+</html>
