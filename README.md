@@ -56,7 +56,13 @@ Specific styles for the payment page
 Form styling for payment details
 
 4. contact.css - Contact Page Stylesheet (Nicholas)
-Specific styles for the contact page 
+Specific styles for the contact page
+
+
+Javascript Files:
+1. validation.js
+2. auth.js
+   
 NOTE: this outline is subject to change. 
 
 Work Breakdown:
