@@ -60,12 +60,12 @@ Specific styles for the contact page
 
 
 Javascript Files:
-1. validation.js
-2. auth.js
+1. validation.js (Aziz)
+2. auth.js (Aziz)
    
 NOTE: this outline is subject to change. 
 
 Work Breakdown:
-1. Aziz - patient and doctor log in and registration and home page index & style.css 
+1. Aziz - patient and doctor log in and registration and home page index & style.css & validation.js & auth.js
 2. Nicholas - schedule.html & schedule.css & contact.html & contact.css
 3. Trung - payment.html & payment.CSS & confirmation.css 
