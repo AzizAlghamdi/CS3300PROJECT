@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Register - CS 3300 Healthcare Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">CS 3300 Healthcare Platform</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="schedule.html ">Schedule Appointments</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="patient_register.html">Patient Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctor_register.html">Doctor Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="patient_login.html">Patient Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctor_login.html">Doctor Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="prescriptions.html">Prescriptions</a></li>
+                <li class="nav-item"><a class="nav-link" href="lab_results.html">Lab Results</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <h2 class="text-center">Doctor Registration</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="inputSpecialty">Specialty</label>
+                <input type="text" class="form-control" id="inputSpecialty" placeholder="Specialty" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+        </form>
+    </main>
+    <footer class="footer text-center">
+        &copy; CS 3300 Healthcare Platform
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
