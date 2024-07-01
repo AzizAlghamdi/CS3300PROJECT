@@ -1,7 +1,8 @@
-flask
+Flask
 flask-httpauth
 flask-restful
 flasgger
 joblib
 cryptography
 gunicorn
+openai
