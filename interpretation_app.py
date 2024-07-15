@@ -1,59 +1,82 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import requests
 import PyPDF2
-from openai import OpenAI
-client = OpenAI()
+import os
+import openai
+from googletrans import Translator
 
-global_url = r"https://images.drlogy.com/assets/uploads/lab/pdf/CBC-test-report-format-example-sample-template-Drlogy-lab-report.pdf"
-
+# Initialize Flask app
 app = Flask(__name__)
 
-'''
-donwload_pdf is used to download pdf file to local machine so that open() can open the file.
-'''
+# Load OpenAI API key from environment variable
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Initialize the Google Translator
+translator = Translator()
+
+# Function to download PDF from URL to local path
 def download_pdf(url, local_path):
-    response = requests.get(url)
-    with open(local_path, "wb") as file:
-        file.write(response.content)
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Check for request errors
+        with open(local_path, "wb") as file:
+            file.write(response.content)
+    except requests.exceptions.RequestException as e:
+        print(f"Error downloading PDF: {e}")
+        return None
+    return local_path
 
-'''
-lab_result_intepret extracts information from pdf to interpret lab result using OpenAI API.
-'''
-def lab_result_interpret(pdf_path):
-    with open(pdf_path, 'rb') as pdf_file:
-        # Create a PdfReader object instead of PdfFileReader
-        pdf_reader = PyPDF2.PdfReader(pdf_file)
+# Function to interpret lab results from PDF using OpenAI
+def lab_result_interpret(pdf_path, language):
+    try:
+        with open(pdf_path, 'rb') as pdf_file:
+            pdf_reader = PyPDF2.PdfFileReader(pdf_file)
+            text = ""
+            for page_num in range(pdf_reader.numPages):
+                page = pdf_reader.getPage(page_num)
+                text += page.extract_text()
 
-        # Initialize an empty string to store the text
-        text = ''
-        # Extract text
-        for page_num in range(len(pdf_reader.pages)):
-            page = pdf_reader.pages[page_num]
-            text += page.extract_text()
+        # OpenAI API call to interpret lab results
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=f"You are a doctor. Interpret the following lab results:\n\n{text}\n\nProvide detailed explanations, health implications, normal ranges, and recommendations.",
+            max_tokens=1500
+        )
+        interpretation = response.choices[0].text.strip()
 
-    # Prompt OpenAI to interpret the result        
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "You are a doctor, your job is to interpret the following healthcare lab results and provide a detailed explanation of what each result indicates, including potential health implications, normal ranges, and any recommendations for further action or lifestyle changes. Everything will be in Vietnamese."},
-            {"role": "user", "content": text},
-        ]
-    )
-    temp_array = []
-    temp_array = completion.choices[0].message.content.splitlines()
-    return temp_array
+        # Translate interpretation to the desired language
+        if language != "en":
+            translated = translator.translate(interpretation, dest=language)
+            return translated.text
+        return interpretation
+    except Exception as e:
+        print(f"Error interpreting lab results: {e}")
+        return "Error interpreting lab results."
 
+# Home route
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    pdf_url= global_url
-    return render_template("viewer.html", pdf_url=pdf_url)
+    if request.method == 'POST':
+        pdf_url = request.form.get('pdf_url')
+        language = request.form.get('language')
+        if pdf_url and language:
+            local_path = download_pdf(pdf_url, 'lab_result.pdf')
+            if local_path:
+                return redirect(url_for('interpret', pdf_url=pdf_url, language=language))
+    return render_template("viewer.html")
 
+# Interpretation route
 @app.route('/interpretation')
 def interpret():
-    pdf_url = global_url
-    download_pdf(pdf_url, 'lab_result.txt')
-    result = lab_result_interpret('lab_result.txt')
-    return render_template("result.html", pdf_url=pdf_url, result=result)
+    pdf_url = request.args.get('pdf_url')
+    language = request.args.get('language', 'en')
+    if pdf_url:
+        local_path = download_pdf(pdf_url, 'lab_result.pdf')
+        if local_path:
+            result = lab_result_interpret(local_path, language)
+            return render_template("result.html", result=result, language=language)
+    return "Error processing PDF."
 
+# Main function
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
