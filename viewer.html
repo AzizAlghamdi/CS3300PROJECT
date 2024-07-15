@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: 100vh; /* Full viewport height */
+                width: 100vw; /* Full viewport width */
+                box-sizing: border-box;
+            }
+            .page-title {
+                text-align: center;
+            }
+            .viewer {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            object:focus {
+                outline: none;
+            }
+            .object {
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                border: none;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                width: 100%;
+            }
+
+            .interpretation-button {
+
+                background-color: #69efbe;
+                color: white ;
+                padding: 12px;
+                margin: 10px;
+                border: none;
+                width: 100%;
+                border-radius: 3px;
+                cursor: pointer;
+                font-size: 17px;
+
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-title">
+                <h1>YOUR LAB RESULT</h1>
+            </div>
+            <div class="viewer">
+                {% if pdf_url %}
+                    <object class="object" data="{{ pdf_url }}" type="application/pdf" width="100%" height="100%">
+                    </object>
+                    
+                {% else %}
+                    <p>Unable to display.</p>
+                {% endif %}
+            </div>
+            <div class="button-container">
+                <button class="interpretation-button">
+                    INTERPRET
+                    <a href="{{ url_for('interpret') }}"></a>
+                </button>
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+    </script>
+</html>

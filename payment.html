@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page - CS 3300 Healthcare Platform</title> 
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-logo">
+            <div class="logo">
+                <svg width="100px" height="100px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M601.5 531.8h278.8v16H601.5zM639.3 657.4h224v16h-224zM686.8 779h160.8v16H686.8z" fill="#F73737" /><path d="M216.3 927.8H62.2V425.6h155.4l-1.3 502.2z m-110.1-44h66.2l1.1-414.2h-67.3v414.2zM822.1 927.8H268.9l-0.4-502L633.3 96.2l85.2 91.5-66.8 196.7h310L822.1 927.8z m-509.3-44H788l117-455.4H655.8l-65.5-0.1 78.1-229.9-37.8-40.5-318.1 287.4 0.3 438.5z" fill="#353535" /></svg>
+            </div>
+        </div>
+        <div class="general-payment-container">
+            <h3>Payment</h3>
+            <div class="payment-container">
+                <form action="">
+                    <label for="name-on-card">Name on card</label><br>
+                    <input type="text" id="name" name="name" placeholder="John Doe"><br><br>
+                    <label for="card-number">Card number</label><br>
+                    <input type="number" id="card-number" name="card-number" placeholder="0000 0000 0000 0000"><br><br>
+                    <div style="-ms-flex: 50%; flex: 50%;">
+                        <div style="width: 50%; margin-bottom: 10px;">
+                            <label for="expiration-date">Expiration date</label><br>
+                            <input type="date" name="expiration-date" id="expiration-date" placeholder="01/20">
+                        </div>
+                        <div style="width: 50%; margin-bottom: 10px;">
+                            <label for="cvv-code">CVV</label><br>
+                            <input type="password" name="cvv-code" id="cvv-code" placeholder="123">
+                        </div>
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+        <div class="billing-address-container">
+            <h3>Billing Address</h3>
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email"><br><br>
+            <label for="address">Address</label><br>
+            <input type="text" name="address" id="address"><br><br>
+            <label for="city">City</label><br>
+            <input type="text" name="city" id="city"><br><br>
+            <label for="zipcode">Zip code</label><br>
+            <input type="number" name="zipcode" id="zipcode"><br><br>
+            <label for="state">State</label><br>
+            <input type="text" name="state" id="state"><br><br>
+        </div>
+        <div>
+            
+            <label for="same-address">
+                <input type="checkbox" name="same-address" id="same-address">
+                Shipping address same as billing address.
+                <br>
+                <input type="submit" value="Continue to checkout" class="checkout-button" onclick="window.location.href='payment_confirmation/'">
+                
+
+            </label>
+            
+        </div>
+    </div>
+       <footer class="footer text-center">
+        &copy; CS 3300 Healthcare Platform
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>
+<!-- <script>
+    checkout(){
+        window.location.href='payment_confirmation.html'
+    }
+</script> -->
