@@ -9,38 +9,38 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html">CS 3300 Healthcare Platform</a>
+       <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html" data-translate="navbar_brand">CS 3300 Healthcare Platform</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="schedule.html ">Schedule Appointments</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_register.html">Patient Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_register.html">Doctor Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_login.html">Patient Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_login.html">Doctor Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="prescriptions.html">Prescriptions</a></li>
-                <li class="nav-item"><a class="nav-link" href="lab_results.html">Lab Results</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav_home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="nav_contact">Contact Us</a></li>
+                <li class="nav-item">
+                    <button id="translate-en" class="btn btn-link">EN</button>
+                    <button id="translate-es" class="btn btn-link">ES</button>
+                    <button id="translate-ar" class="btn btn-link">AR</button>
+                </li>
             </ul>
         </div>
     </header>
-    <main class="container mt-5">
-        <h2 class="text-center">Patient Login</h2>
-        <form>
-            <div class="form-group">
-                <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-        </form>
+    <main>
+        <div class="container">
+            <h1 class="my-4" data-translate="login_title">Patient Login</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-translate="login_email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" data-translate="login_password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" data-translate="login_button">Login</button>
+            </form>
+        </div>
     </main>
     <footer class="footer text-center">
         &copy; CS 3300 Healthcare Platform
@@ -48,5 +48,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
