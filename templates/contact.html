@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="css/contact.css"> <!-- Contact page styles -->
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-        <nav>
-            <ul>
-                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="schedule.html ">Schedule Appointments</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_register.html">Patient Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_register.html">Doctor Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_login.html">Patient Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_login.html">Doctor Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="prescriptions.html">Prescriptions</a></li>
-                <li class="nav-item"><a class="nav-link" href="lab_results.html">Lab Results</a></li>
+     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html" data-translate="navbar_brand">CS 3300 Healthcare Platform</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav_home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="schedule.html" data-translate="nav_schedule">Schedule Appointments</a></li>
+                <li class="nav-item"><a class="nav-link" href="patient_login.html" data-translate="nav_patient_login">Patient Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctor_login.html" data-translate="nav_doctor_login">Doctor Login</a></li>
+                <li class="nav-item">
+                    <button id="translate-en" class="btn btn-link">EN</button>
+                    <button id="translate-es" class="btn btn-link">ES</button>
+                    <button id="translate-ar" class="btn btn-link">AR</button>
+                </li>
             </ul>
-        </nav>
-    </header>
+        </div>
 
     <main>
         <section id="contact-info">
@@ -41,28 +43,33 @@
             </div>
         </section>
 
-        <section id="contact-form">
-            <h2>Send Us a Message</h2>
-            <form action="confirmation.html" method="POST">
-                <label for="full-name">Full Name:</label>
-                <input type="text" id="full-name" name="full-name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Send Message</button>
+        <div class="container">
+            <h1 class="my-4" data-translate="contact_title">Contact Us</h1>
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" id="name" data-translate-placeholder="contact_name" placeholder="Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control" id="email" data-translate-placeholder="contact_email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="message" rows="5" data-translate-placeholder="contact_message" placeholder="Message" required></textarea>
+                </div>
+                <button class="btn btn-primary btn-lg" type="submit" data-translate="contact_send_message">Send Message</button>
             </form>
-        </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; CS 3300 Healthcare Platform</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>    
 </body>
 </html>
