@@ -1,217 +1,123 @@
+/* style.css */
+
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #c3c3c390;
-    background-color: #000000;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 .navbar {
-    background-color: #5d5a5a;
-}
-
-.navbar-brand, .nav-link {
-    color: #fff !important;
+    margin-bottom: 20px;
 }
 
 .hero {
-    background-color: #000000;
-    height: 100vh;
+    background: #007bff;
     color: white;
-    position: relative;
+    padding: 60px 0;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-}
-
-.hero-text {
-    position: relative;
-    z-index: 1;
+.hero .container {
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    animation: fadeInDown 1.5s;
+    font-size: 3rem;
 }
 
 .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-    animation: fadeInUp 1.5s;
+    font-size: 1.5rem;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero a {
+    margin-top: 20px;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.features {
+    padding: 40px 0;
 }
 
-.btn-primary {
-    background-color: #2ecc71;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #27ae60;
-    transform: scale(1.05);
-}
-
-.features, .testimonials, .contact {
-    padding: 4rem 0;
+.features h2 {
+    margin-bottom: 20px;
 }
 
 .features .col-md-4 {
-    margin-bottom: 30px;
-    animation: fadeIn 1.5s;
-}
-
-.features .fa {
     margin-bottom: 20px;
-    color: #f6f9fa;
-    animation: bounceIn 1.5s;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.features i {
+    margin-bottom: 10px;
+    color: #007bff;
 }
 
-@keyframes bounceIn {
-    from, 20%, 40%, 60%, 80%, to {
-        animation-timing-function: ease-out;
-    }
-    0% {
-        opacity: 0;
-        transform: translate3d(0, -3000px, 0);
-    }
-    60% {
-        opacity: 1;
-        transform: translate3d(0, 25px, 0);
-    }
-    80% {
-        transform: translate3d(0, -10px, 0);
-    }
-    to {
-        transform: translate3d(0, 0, 0);
-    }
+.testimonials {
+    padding: 40px 0;
+}
+
+.testimonials h2 {
+    margin-bottom: 20px;
 }
 
 .testimonials blockquote {
-    border-left: 5px solid #2ecc71;
-    padding-left: 20px;
+    margin: 0;
+    padding: 20px;
+    border-left: 5px solid #007bff;
+}
+
+.contact {
+    padding: 40px 0;
+}
+
+.contact h2 {
     margin-bottom: 20px;
-    animation: fadeIn 1.5s;
-    background-color: #000000;
+}
+
+.contact form {
+    margin-top: 20px;
 }
 
 .footer {
-    background-color: #000000;
+    background-color: #343a40;
     color: white;
-    padding: 1rem 0;
-}
-
-.footer a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: #e74c3c;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 50px;
+    padding: 20px 0;
+    margin-top: 20px;
 }
 
 .chat-container {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     right: 20px;
     width: 300px;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#chatbox {
-    max-height: 300px;
-    overflow-y: auto;
+.chat-container #chatbox {
+    height: 200px;
+    overflow-y: scroll;
+    background-color: #fff;
     padding: 10px;
-    background: #fafafa;
-    border-radius: 5px;
     border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-.userMessage, .botMessage {
+.chat-container input {
+    width: calc(100% - 60px);
     padding: 10px;
-    margin: 5px 0;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.userMessage {
-    background-color: #d1e7dd;
-    text-align: right;
-}
-
-.botMessage {
-    background-color: #f8d7da;
-    text-align: left;
-}
-
-input[type="text"] {
-    width: 70%;
+.chat-container button {
     padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
     border: none;
-    background: #007bff;
-    color: #fff;
+    background-color: #007bff;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #0056b3;
+.chat-container button:hover {
+    background-color: #0056b3;
 }
-
