@@ -9,113 +9,117 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html">CS 3300 Healthcare Platform</a>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html" data-translate="navbar_brand">CS 3300 Healthcare Platform</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="schedule.html ">Schedule Appointments</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_register.html">Patient Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_register.html">Doctor Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_login.html">Patient Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_login.html">Doctor Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="prescriptions.html">Prescriptions</a></li>
-                <li class="nav-item"><a class="nav-link" href="lab_results.html">Lab Results</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav_home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="schedule.html" data-translate="nav_schedule">Schedule Appointments</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="nav_contact">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="patient_register.html" data-translate="nav_patient_register">Patient Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctor_register.html" data-translate="nav_doctor_register">Doctor Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="patient_login.html" data-translate="nav_patient_login">Patient Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctor_login.html" data-translate="nav_doctor_login">Doctor Login</a></li>
+                <li class="nav-item d-none" id="nav_prescriptions"><a class="nav-link" href="prescriptions.html" data-translate="nav_prescriptions">Prescriptions</a></li>
+                <li class="nav-item d-none" id="nav_lab_results"><a class="nav-link" href="lab_results.html" data-translate="nav_lab_results">Lab Results</a></li>
+                <li class="nav-item">
+                    <button id="translate-en" class="btn btn-link">EN</button>
+                    <button id="translate-es" class="btn btn-link">ES</button>
+                    <button id="translate-ar" class="btn btn-link">AR</button>
+                </li>
             </ul>
         </div>
     </header>
     <main>
-        <div class="hero">
-            <div class="hero-text">
-                <h1>Welcome to Healthcare Platform</h1>
-                <p>Your One-Stop Solution for Managing Appointments, Payments, and Health Records</p>
-                <a class="btn btn-primary btn-lg" href="patient_register.html" role="button">Get Started</a>
+        <div class="hero text-white bg-primary">
+            <div class="container text-center py-5">
+                <h1 data-translate="hero_title">Welcome to Healthcare Platform</h1>
+                <p data-translate="hero_description">Your One-Stop Solution for Managing Appointments, Payments, and Health Records</p>
+                <a class="btn btn-light btn-lg" href="patient_register.html" role="button" data-translate="get_started">Get Started</a>
             </div>
         </div>
-        <section class="features text-center">
+        <section class="features text-center py-5 bg-light">
             <div class="container">
-                <h2>Features</h2>
-                <p class="lead">Discover the benefits of using our platform</p>
+                <h2 data-translate="features_title">Features</h2>
+                <p class="lead" data-translate="features_description">Discover the benefits of using our platform</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <i class="fas fa-calendar-check fa-3x"></i>
-                        <h3>Easy Appointments</h3>
-                        <p>Schedule your appointments with ease and convenience.</p>
+                        <i class="fas fa-calendar-check fa-3x text-primary mb-3"></i>
+                        <h3 data-translate="features_appointments_title">Easy Appointments</h3>
+                        <p data-translate="features_appointments_description">Schedule your appointments with ease and convenience.</p>
                     </div>
                     <div class="col-md-4">
-                        <i class="fas fa-money-check-alt fa-3x"></i>
-                        <h3>Secure Payments</h3>
-                        <p>Make secure payments through our platform with peace of mind.</p>
+                        <i class="fas fa-money-check-alt fa-3x text-primary mb-3"></i>
+                        <h3 data-translate="features_payments_title">Secure Payments</h3>
+                        <p data-translate="features_payments_description">Make secure payments through our platform with peace of mind.</p>
                     </div>
                     <div class="col-md-4">
-                        <i class="fas fa-file-medical-alt fa-3x"></i>
-                        <h3>Health Records</h3>
-                        <p>Access and manage your health records anytime, anywhere.</p>
+                        <i class="fas fa-file-medical-alt fa-3x text-primary mb-3"></i>
+                        <h3 data-translate="features_records_title">Health Records</h3>
+                        <p data-translate="features_records_description">Access and manage your health records anytime, anywhere.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="testimonials bg-light text-center">
+        <section class="testimonials text-center py-5">
             <div class="container">
-                <h2>Testimonials</h2>
-                <p class="lead">Hear what our users have to say</p>
+                <h2 data-translate="testimonials_title">Testimonials</h2>
+                <p class="lead" data-translate="testimonials_description">Hear what our users have to say</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <blockquote class="blockquote">
-                            <p class="mb-0">This platform has made managing my health so much easier!</p>
-                            <footer class="blockquote-footer">John Doe</footer>
+                        <blockquote class="blockquote bg-light p-4 rounded">
+                            <p class="mb-0" data-translate="testimonial_1">This platform has made managing my health so much easier!</p>
+                            <footer class="blockquote-footer" data-translate="testimonial_author_1">John Doe</footer>
                         </blockquote>
                     </div>
                     <div class="col-md-6">
-                        <blockquote class="blockquote">
-                            <p class="mb-0">A game-changer for healthcare management.</p>
-                            <footer class="blockquote-footer">Jane Smith</footer>
+                        <blockquote class="blockquote bg-light p-4 rounded">
+                            <p class="mb-0" data-translate="testimonial_2">A game-changer for healthcare management.</p>
+                            <footer class="blockquote-footer" data-translate="testimonial_author_2">Jane Smith</footer>
                         </blockquote>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contact text-center">
+        <section class="contact text-center py-5 bg-light">
             <div class="container">
-                <h2>Contact Us</h2>
-                <p class="lead">Have any questions? Get in touch!</p>
+                <h2 data-translate="contact_title">Contact Us</h2>
+                <p class="lead" data-translate="contact_description">Have any questions? Get in touch!</p>
                 <form>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" placeholder="Name" required>
+                            <input type="text" class="form-control" data-translate="name_placeholder" required>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <input type="email" class="form-control" data-translate="email_placeholder" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                        <textarea class="form-control" rows="5" data-translate="message_placeholder" required></textarea>
                     </div>
-                    <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+                    <button class="btn btn-primary btn-lg" type="submit" data-translate="send_message">Send Message</button>
                 </form>
             </div>
         </section>
-            </main>
+    </main>
     <div class="chat-container">
         <div id="chatbox">
             <div id="chatlogs"></div>
         </div>
-        <input type="text" id="userInput" placeholder="Type your message here...">
+        <input type="text" id="userInput" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage();">
         <button onclick="sendMessage()">Send</button>
     </div>
-    
-    <script src="js/api.js"></script>
-    </main>
-    <footer class="footer text-center">
-        &copy; CS 3300 Healthcare Platform
+    <footer class="footer text-center bg-dark text-white py-3">
+        &copy; <span data-translate="footer_text">CS 3300 Healthcare Platform</span>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/api.js"></script>
 </body>
 </html>
+
