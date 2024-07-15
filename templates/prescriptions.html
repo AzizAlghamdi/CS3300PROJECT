@@ -9,57 +9,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html">CS 3300 Healthcare Platform</a>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html" data-translate="navbar_brand">CS 3300 Healthcare Platform</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="schedule.html ">Schedule Appointments</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_register.html">Patient Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_register.html">Doctor Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_login.html">Patient Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_login.html">Doctor Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="prescriptions.html">Prescriptions</a></li>
-                <li class="nav-item"><a class="nav-link" href="lab_results.html">Lab Results</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav_home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="schedule.html" data-translate="nav_schedule">Schedule Appointments</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="nav_contact">Contact Us</a></li>
+                <li class="nav-item d-none" id="nav_lab_results"><a class="nav-link" href="lab_results.html" data-translate="nav_lab_results">Lab Results</a></li>
+                <li class="nav-item">
+                    <button id="translate-en" class="btn btn-link">EN</button>
+                    <button id="translate-es" class="btn btn-link">ES</button>
+                    <button id="translate-ar" class="btn btn-link">AR</button>
+                </li>
             </ul>
         </div>
     </header>
-    <main class="container mt-5">
-        <h2 class="text-center">Prescriptions</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead class="thead-dark">
+    <main>
+        <div class="container">
+            <h1 class="my-4" data-translate="prescriptions_title">Prescriptions</h1>
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <th scope="col">Prescription ID</th>
-                        <th scope="col">Patient Name</th>
-                        <th scope="col">Doctor Name</th>
-                        <th scope="col">Medication</th>
-                        <th scope="col">Dosage</th>
-                        <th scope="col">Date</th>
+                        <th scope="col" data-translate="prescriptions_medication">Medication</th>
+                        <th scope="col" data-translate="prescriptions_dosage">Dosage</th>
+                        <th scope="col" data-translate="prescriptions_frequency">Frequency</th>
+                        <th scope="col" data-translate="prescriptions_start_date">Start Date</th>
+                        <th scope="col" data-translate="prescriptions_end_date">End Date</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>12345</td>
-                        <td>John Doe</td>
-                        <td>Dr. Smith</td>
-                        <td>Medicine A</td>
-                        <td>2 tablets</td>
-                        <td>2024-06-20</td>
-                    </tr>
+                <tbody id="prescriptionsTableBody">
+                    <!-- Prescriptions will be populated here -->
                 </tbody>
             </table>
         </div>
     </main>
     <footer class="footer text-center">
-        &copy; CS 3300 Healthcare Platform
+        &copy; <span data-translate="footer_text">CS 3300 Healthcare Platform</span>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>    
 </body>
 </html>
+
