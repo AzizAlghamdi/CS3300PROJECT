@@ -3,61 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule Appointment - CS 3300 Healthcare Platform</title>
-    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/schedule.css"> <!-- Schedule page specific styles -->
+    <title>Schedule Appointments - CS 3300 Healthcare Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Schedule Your Appointment</h1>
-        <nav>
-            <ul>
-                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="schedule.html ">Schedule Appointments</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_register.html">Patient Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_register.html">Doctor Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="patient_login.html">Patient Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="doctor_login.html">Doctor Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="prescriptions.html">Prescriptions</a></li>
-                <li class="nav-item"><a class="nav-link" href="lab_results.html">Lab Results</a></li>
-                
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html" data-translate="navbar_brand">CS 3300 Healthcare Platform</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav_home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="nav_contact">Contact Us</a></li>
+                <li class="nav-item">
+                    <button id="translate-en" class="btn btn-link">EN</button>
+                    <button id="translate-es" class="btn btn-link">ES</button>
+                    <button id="translate-ar" class="btn btn-link">AR</button>
+                </li>
             </ul>
-        </nav>
+        </div>
     </header>
-
     <main>
-        <section id="appointment-form">
-            <h2>Appointment Form</h2>
-            <form action="confirmation.html" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" required>
-                
-                <button type="submit">Schedule Appointment</button>
+        <div class="container">
+            <h1 class="my-4" data-translate="schedule_title">Schedule an Appointment</h1>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="appointmentDate" data-translate="schedule_date">Appointment Date</label>
+                    <input type="date" class="form-control" id="appointmentDate" name="appointment_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentTime" data-translate="schedule_time">Appointment Time</label>
+                    <input type="time" class="form-control" id="appointmentTime" name="appointment_time" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor" data-translate="schedule_doctor">Select Doctor</label>
+                    <select class="form-control" id="doctor" name="doctor" required>
+                        <option value="" disabled selected data-translate="schedule_select_doctor">Select a doctor</option>
+                        <option value="Dr_Aziz" data-translate="schedule_Dr_Aziz">Dr. Aziz</option>
+                        <option value="Dr_Nick" data-translate="schedule_Dr_Nick">Dr. Nick</option>
+                        <option value="Dr_Trung" data-translate="schedule_Dr_Trung">Dr. Trung</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod" data-translate="schedule_payment_method">Payment Method</label>
+                    <select class="form-control" id="paymentMethod" name="payment_method" required>
+                        <option value="" disabled selected data-translate="schedule_select_payment">Select a payment method</option>
+                        <option value="credit_card" data-translate="schedule_credit_card">Credit Card</option>
+                        <option value="paypal" data-translate="schedule_paypal">PayPal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cardDetails" data-translate="schedule_card_details">Card Details</label>
+                    <input type="text" class="form-control" id="cardDetails" name="card_details" placeholder="Card Number" required>
+                </div>
+                <button type="submit" class="btn btn-primary" data-translate="schedule_appointment">Schedule Appointment ($30)</button>
             </form>
-        </section>
-        
-        <section id="calendar-view">
-            <h2>Calendar View</h2>
-            <!-- Add a calendar widget -->
-            <div id="calendar"></div>
-        </section>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy;      CS 3300 Healthcare Platform
+    <footer class="footer text-center">
+        &copy; <span data-translate="footer_text">CS 3300 Healthcare Platform</span>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
