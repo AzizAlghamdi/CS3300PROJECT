@@ -241,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
             testimonial_author_2: "جين سميث",
             contact_title: "اتصل بنا",
             contact_description: "هل لديك أي أسئلة؟ اتصل بنا!"
+            login_title_patient: "تسجيل دخول المريض"
         },
         vn: {
             navbar_brand: "CS 3300 Nền Tảng Chăm sóc sức khỏe",
