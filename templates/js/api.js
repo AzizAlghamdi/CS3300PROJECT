@@ -356,6 +356,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#translate-ar").addEventListener("click", function() {
         setLanguage("ar");
     });
+        document.querySelector("#translate-vn").addEventListener("click", function() {
+        setLanguage("vn");
+    });
 
     const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
     setLanguage(savedLanguage);
