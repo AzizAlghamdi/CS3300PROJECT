@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, jsonify, render_template
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, text
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from werkzeug.security import generate_password_hash, check_password_hash
 from encryption import encrypt_message, decrypt_message
@@ -59,7 +59,7 @@ class Prescription(Base):
 def initialize_database(engine):
     # Create tables manually using raw SQL commands
     with engine.connect() as conn:
-        conn.execute("""
+        conn.execute(text("""
             CREATE TABLE IF NOT EXISTS users (
                 id INTEGER PRIMARY KEY,
                 first_name VARCHAR(50) NOT NULL,
@@ -68,8 +68,8 @@ def initialize_database(engine):
                 password VARCHAR(200) NOT NULL,
                 role VARCHAR(50) NOT NULL
             )
-        """)
-        conn.execute("""
+        """))
+        conn.execute(text("""
             CREATE TABLE IF NOT EXISTS appointments (
                 id INTEGER PRIMARY KEY,
                 user_id INTEGER NOT NULL,
@@ -80,8 +80,8 @@ def initialize_database(engine):
                 card_details VARCHAR(200) NOT NULL,
                 FOREIGN KEY(user_id) REFERENCES users(id)
             )
-        """)
-        conn.execute("""
+        """))
+        conn.execute(text("""
             CREATE TABLE IF NOT EXISTS lab_results (
                 id INTEGER PRIMARY KEY,
                 user_id INTEGER NOT NULL,
@@ -91,8 +91,8 @@ def initialize_database(engine):
                 interpretation VARCHAR(200),
                 FOREIGN KEY(user_id) REFERENCES users(id)
             )
-        """)
-        conn.execute("""
+        """))
+        conn.execute(text("""
             CREATE TABLE IF NOT EXISTS prescriptions (
                 id INTEGER PRIMARY KEY,
                 user_id INTEGER NOT NULL,
@@ -103,7 +103,7 @@ def initialize_database(engine):
                 end_date VARCHAR(50) NOT NULL,
                 FOREIGN KEY(user_id) REFERENCES users(id)
             )
-        """)
+        """))
 
 @app.route('/')
 def index():
